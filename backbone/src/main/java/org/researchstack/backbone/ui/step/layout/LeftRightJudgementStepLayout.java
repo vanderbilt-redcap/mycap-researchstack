@@ -87,6 +87,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
 
     private static final int LEFT_BUTTON = 1;
     private static final int RIGHT_BUTTON = 2;
+    private static final String ImageDirectory = "images";
 
     private Button leftButton;
     private Button rightButton;
@@ -458,7 +459,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     }
 
     private void setImage(String imageName) {
-        String imageReference = String.format("%1$s/%2$s", "images", imageName);
+        String imageReference = String.format("%1$s/%2$s", ImageDirectory, imageName);
         AssetManager assetManager = getContext().getAssets(); 
         // get input stream
         InputStream inputStream = null;
@@ -837,7 +838,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
 
     private String[] arrayOfShuffledFileNamesFromDirectory () {
         if (_shuffled == false) { // build shuffled array only once
-            _fileNameArray = arrayOfAllFileNamesFromDirectory("images");
+            _fileNameArray = arrayOfAllFileNamesFromDirectory(ImageDirectory);
             Collections.shuffle(Arrays.asList(_fileNameArray)); // shuffle list
             _shuffled = true;
         }
@@ -848,7 +849,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         AssetManager assetManager = getContext().getAssets();
         List<String> listOfAllFiles = new ArrayList<>();
         try {
-            listOfAllFiles = Arrays.asList(assetManager.list(directory)); // "images"
+            listOfAllFiles = Arrays.asList(assetManager.list(directory));
         } catch (IOException e) {
             e.printStackTrace();
         }

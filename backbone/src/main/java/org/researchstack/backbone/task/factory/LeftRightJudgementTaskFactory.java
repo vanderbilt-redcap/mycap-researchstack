@@ -19,7 +19,7 @@ import static org.researchstack.backbone.task.factory.TaskFactory.Constants.*;
 import static org.researchstack.backbone.task.factory.TaskOptions.ImageOption.*;
 
 /**
- * Created by Dr David W. Evans, 2021.
+ * Created by Dr David W. Evans, Janury 2021.
  */
 
 public class LeftRightJudgementTaskFactory {

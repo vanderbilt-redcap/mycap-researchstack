@@ -32,7 +32,7 @@ import java.util.Random;
 import static org.researchstack.backbone.task.factory.TaskOptions.ImageOption.*;
 
 /**
- * Created by Dr David W. Evans in January 2021.
+ * Created by Dr David W. Evans, January 2021.
  *
  * The LeftRightJudgementStepLayout displays a series of images selected by name from the assets folder.
  * There are two buttons at the bottom of the screen ('left' and 'right'), through which the user

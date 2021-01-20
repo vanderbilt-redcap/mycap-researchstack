@@ -15,7 +15,7 @@ public class LeftRightJudgementStep extends ActiveStep {
     private double maximumInterStimulusInterval;
     private double timeout;
     private boolean shouldDisplayAnswer;
-    private TaskOptions.ImageOption imageOption; //enum
+    private TaskOptions.ImageOption imageOption;
 
     /* Default constructor needed for serialization/deserialization of object */
     LeftRightJudgementStep() {
@@ -37,11 +37,11 @@ public class LeftRightJudgementStep extends ActiveStep {
         setShouldStartTimerAutomatically(true);
         setShouldShowDefaultTimer(false);
         setShouldVibrateOnStart(true);
-        setShouldPlaySoundOnStart(false); // changed
+        setShouldPlaySoundOnStart(false);
         setShouldContinueOnFinish(true);
         setShouldStartTimerAutomatically(true);
         setShouldVibrateOnFinish(true);
-        setShouldPlaySoundOnFinish(false); // changed
+        setShouldPlaySoundOnFinish(false);
         setEstimateTimeInMsToSpeakEndInstruction(0); // do not wait to proceed
     }
 

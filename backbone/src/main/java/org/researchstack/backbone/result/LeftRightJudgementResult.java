@@ -140,7 +140,7 @@ public class LeftRightJudgementResult extends Result {
     }
 
     public void setOrientationPresented(String orientationPresented) {
-        this.imageName = orientationPresented;
+        this.orientationPresented = orientationPresented;
     }
 
     public int getRotationPresented() {

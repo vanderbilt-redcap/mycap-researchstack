@@ -7,12 +7,11 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.common.io.Files;
 
 import org.researchstack.backbone.R;
 import org.researchstack.backbone.result.StepResult;
@@ -27,7 +26,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
 
 import static org.researchstack.backbone.task.factory.TaskOptions.ImageOption.*;
 
@@ -904,7 +902,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
 
         // image results
         leftRightJudgementResult.setImageNumber(_imageCount);
-        leftRightJudgementResult.setImageName(imageName);
+        leftRightJudgementResult.setImageName(Files.getNameWithoutExtension(imageName)); // remove extension
         leftRightJudgementResult.setViewPresented(view);
         leftRightJudgementResult.setOrientationPresented(orientation);
         leftRightJudgementResult.setRotationPresented(rotation);

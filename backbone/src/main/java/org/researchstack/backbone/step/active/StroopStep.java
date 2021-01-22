@@ -13,7 +13,6 @@ public class StroopStep extends ActiveStep {
     private int numberOfAttempts;
     private double minimumInterStimulusInterval;
     private double maximumInterStimulusInterval;
-    private TaskOptions.ImageOption imageOption; //enum
 
     /* Default constructor needed for serialization/deserialization of object */
     StroopStep() {

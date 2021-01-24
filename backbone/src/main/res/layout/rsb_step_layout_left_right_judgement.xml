@@ -86,7 +86,7 @@
                 android:layout_width="@dimen/rsb_step_layout_tapping_interval_button_size"
                 android:layout_height="@dimen/rsb_step_layout_tapping_interval_button_size"
                 android:layout_margin="50dp"
-                android:background="@drawable/rsb_left_right_judgement_button"
+                android:background="@drawable/rsb_round_cornered_button"
                 android:gravity="center"
                 android:textAllCaps="false"
                 android:textColor="@color/rsb_white"

@@ -44,15 +44,14 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     protected LeftRightJudgementResult leftRightJudgementResult;
     protected Drawable drawable;
 
-    private double _startTime;
-    Handler interStimulusIntervalHandler;
-    Handler timeoutHandler;
-    Handler timeoutNotificationHandler;
-    Handler displayAnswerHandler;
-    Runnable interStimulusIntervalRunnable;
-    Runnable timeoutRunnable;
-    Runnable timeoutNotificationRunnable;
-    Runnable displayAnswerRunnable;
+    private Handler interStimulusIntervalHandler;
+    private Handler timeoutHandler;
+    private Handler timeoutNotificationHandler;
+    private Handler displayAnswerHandler;
+    private Runnable interStimulusIntervalRunnable;
+    private Runnable timeoutRunnable;
+    private Runnable timeoutNotificationRunnable;
+    private Runnable displayAnswerRunnable;
     private String[] _fileNameArray;
     private String[] _imagePaths;
     private int _imageCount;
@@ -61,6 +60,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     private int _leftSumCorrect;
     private int _rightSumCorrect;
     private int _timedOutCount;
+    private double _startTime;
     private double _percentTimedOut;
     private double _leftPercentCorrect;
     private double _rightPercentCorrect;
@@ -396,9 +396,6 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     private void startQuestion() {
         _imageCount++; // increment on call
         String imageName = nextFileNameInQueue();
-        if (_imageCount == 1) {
-            hideButtons();
-        }
         setImage(imageName);
         showButtons();
         configureCountText();

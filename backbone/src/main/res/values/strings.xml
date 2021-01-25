@@ -602,6 +602,7 @@
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_STEP_TEXT_FOOT">Select the side of the body to which each foot belongs.</string>
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON">Left</string>
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON">Right</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_BUTTON_NONE">None</string>
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_CORRECT">You are correct!</string>
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_INCORRECT">Sorry, you are incorrect.</string>
     <string name="rsb_LEFT_RIGHT_JUDGEMENT_TIMEOUT_NOTIFICATION">Sorry, this image timed out.</string>

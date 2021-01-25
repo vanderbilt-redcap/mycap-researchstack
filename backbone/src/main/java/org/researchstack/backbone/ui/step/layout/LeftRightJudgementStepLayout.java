@@ -44,6 +44,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     protected LeftRightJudgementResult leftRightJudgementResult;
     protected Drawable drawable;
 
+    private double _startTime;
     private Handler interStimulusIntervalHandler;
     private Handler timeoutHandler;
     private Handler timeoutNotificationHandler;
@@ -60,7 +61,6 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     private int _leftSumCorrect;
     private int _rightSumCorrect;
     private int _timedOutCount;
-    private double _startTime;
     private double _percentTimedOut;
     private double _leftPercentCorrect;
     private double _rightPercentCorrect;
@@ -217,7 +217,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
             // evaluate matches according to button pressed
             String sideSelected;
             if (buttonID == LEFT_BUTTON) {
-                sideSelected = "Left";
+                sideSelected = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON);
                 _match = sidePresented.equals(sideSelected);
                 _leftSumCorrect = (_match) ? _leftSumCorrect + 1 : _leftSumCorrect;
                 calculateMeanAndStdReactionTimes(sidePresented, duration, _match);
@@ -225,7 +225,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
                 createResultfromImage(next,view, rotation, orientation, _match, sidePresented, sideSelected, duration);
             }
             else if (buttonID == RIGHT_BUTTON) {
-                sideSelected = "Right";
+                sideSelected = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON);
                 _match = sidePresented.equals(sideSelected);
                 _rightSumCorrect = (_match) ? _rightSumCorrect + 1 : _rightSumCorrect;
                 calculateMeanAndStdReactionTimes(sidePresented, duration, _match);
@@ -303,15 +303,15 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         hideButtons();
         String answerText = null;
         if (leftRightJudgementStep.getImageOption().equals(HANDS)) {
-            if (sidePresented.equals("Left")) {
+            if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON))) {
                 answerText = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_LEFT_HAND); 
-            } else if (sidePresented.equals("Right")) {
+            } else if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON))) {
                 answerText = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_RIGHT_HAND); 
             }
         } else if (leftRightJudgementStep.getImageOption().equals(FEET)) {
-            if (sidePresented.equals("Left")) {
+            if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON))) {
                 answerText = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_LEFT_FOOT); 
-            } else if (sidePresented.equals("Right")) {
+            } else if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON))) {
                 answerText = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_RIGHT_FOOT); 
             }
         }
@@ -396,6 +396,9 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     private void startQuestion() {
         _imageCount++; // increment on call
         String imageName = nextFileNameInQueue();
+        if (_imageCount == 1) {
+            hideButtons();
+        }
         setImage(imageName);
         showButtons();
         configureCountText();
@@ -486,10 +489,10 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         String fileName = nextFileNameInQueue();
         String sidePresented = null;
         if (fileName.contains("lh") || fileName.contains("lf")) {
-            sidePresented = "Left";
+            sidePresented = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON);
             _leftCount ++;
         } else if (fileName.contains("rh") || fileName.contains("rf")) {
-            sidePresented = "Right";
+            sidePresented = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON);
             _rightCount ++;
         }
         return sidePresented;
@@ -752,7 +755,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         String view = viewPresented();
         String orientation = orientationPresented();
         int rotation = rotationPresented();
-        String sideSelected = "None";
+        String sideSelected = getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_BUTTON_NONE);
         _match = false;
         _timedOut = true;
         _timedOutCount++;
@@ -762,11 +765,11 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     }
 
     private void calculatePercentagesForSides(String sidePresented, boolean timeout) {
-        if (sidePresented.equals("Left")) {
+        if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON))) {
             if (_leftCount > 0) { // prevent zero denominator
                 _leftPercentCorrect = (100 * (double)_leftSumCorrect) / (double)_leftCount;
             }
-        } else if (sidePresented.equals("Right")) {
+        } else if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON))) {
             if (_rightCount > 0) { // prevent zero denominator
                 _rightPercentCorrect = (100 * (double)_rightSumCorrect) / (double)_rightCount;
             }
@@ -779,7 +782,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
     private void calculateMeanAndStdReactionTimes(String sidePresented, double duration, boolean match) {
         // calculate mean and unbiased standard deviation of duration for correct matches only
         // (using Welford's algorithm: Welford. (1962) Technometrics 4(3), 419-420)
-        if (sidePresented.equals("Left") && (match)) {
+        if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON)) && (match)) {
             if (_leftSumCorrect == 1) {
                 _prevMl = _newMl = duration;
                 _prevSl = 0;
@@ -793,7 +796,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
             if (_varianceLeftDuration > 0) {
                 _stdLeftDuration = Math.sqrt(_varianceLeftDuration);
             }
-        } else if (sidePresented.equals("Right") && (match)) {
+        } else if (sidePresented.equals(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON)) && (match)) {
             if (_rightSumCorrect == 1) {
                 _prevMr = _newMr = duration;
                 _prevSr = 0;
@@ -826,7 +829,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         int imageQueueLength = leftRightJudgementStep.getNumberOfAttempts();
         _imagePaths = arrayOfShuffledFileNamesFromDirectory();
         // Copy required number of image queue elements to local array
-        String[] imageQueueArray = new String[imageQueueLength]; //NSMutableArray *imageQueueArray = [NSMutableArray arrayWithCapacity:imageQueueLength];
+        String[] imageQueueArray = new String[imageQueueLength];
         System.arraycopy(_imagePaths, 0, imageQueueArray, 0, imageQueueLength);
         return imageQueueArray;
     }
@@ -854,7 +857,6 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
                 listOfEligibleFiles.add(fileName);
             }
         }
-        //setNumberOfImages(listOfEligibleFiles.size());
         Collections.shuffle(listOfEligibleFiles); // shuffle list
         String[] fileNameArray = new String[listOfEligibleFiles.size()];
         listOfEligibleFiles.toArray(fileNameArray); // copy list elements to array

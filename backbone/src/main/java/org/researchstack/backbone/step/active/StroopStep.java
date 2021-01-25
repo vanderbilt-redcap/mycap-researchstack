@@ -1,8 +1,6 @@
 package org.researchstack.backbone.step.active;
 
-import org.researchstack.backbone.step.active.ActiveStep;
-import org.researchstack.backbone.task.factory.TaskOptions;
-import org.researchstack.backbone.ui.step.layout.LeftRightJudgementStepLayout;
+import org.researchstack.backbone.ui.step.layout.StroopStepLayout;
 
 /**
  * Created by Dr David W. Evans, January 2021.
@@ -13,6 +11,7 @@ public class StroopStep extends ActiveStep {
     private int numberOfAttempts;
     private double minimumInterStimulusInterval;
     private double maximumInterStimulusInterval;
+    private double timeout;
 
     /* Default constructor needed for serialization/deserialization of object */
     StroopStep() {
@@ -69,5 +68,13 @@ public class StroopStep extends ActiveStep {
 
     public void setMaximumInterStimulusInterval(double maximumInterStimulusInterval) {
         this.maximumInterStimulusInterval = maximumInterStimulusInterval;
+    }
+
+    public double getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(double timeout) {
+        this.timeout = timeout;
     }
 }

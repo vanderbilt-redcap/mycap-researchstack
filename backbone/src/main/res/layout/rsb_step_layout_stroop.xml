@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/rsb_stroop_color_label_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/rsb_stroop_timeout_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/rsb_left_right_judgement_button_red"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rsb_round_cornered_button"
+                android:gravity="center"
+                android:text="@string/rsb_STROOP_COLOR_RED_INITIAL"
+                android:textAllCaps="false"
+                android:textColor="@color/rsb_white"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/rsb_left_right_judgement_button_green"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rsb_round_cornered_button"
+                android:gravity="center"
+                android:text="@string/rsb_STROOP_COLOR_GREEN_INITIAL"
+                android:textAllCaps="false"
+                android:textColor="@color/rsb_white"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/rsb_left_right_judgement_button_blue"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rsb_round_cornered_button"
+                android:gravity="center"
+                android:text="@string/rsb_STROOP_COLOR_BLUE_INITIAL"
+                android:textAllCaps="false"
+                android:textColor="@color/rsb_white"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/rsb_left_right_judgement_button_yellow"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rsb_round_cornered_button"
+                android:gravity="center"
+                android:text="@string/rsb_STROOP_COLOR_YELLOW_INITIAL"
+                android:textAllCaps="false"
+                android:textColor="@color/rsb_white"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

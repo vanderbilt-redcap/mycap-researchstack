@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:textSize="48sp" />
+        android:textSize="60sp" />
 
     <TextView
         android:id="@+id/rsb_stroop_timeout_textview"

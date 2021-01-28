@@ -1,5 +1,6 @@
 package org.researchstack.backbone.task.factory;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import org.researchstack.backbone.R;
@@ -55,6 +56,7 @@ public class StroopTaskFactory {
      *                                      with an `ActiveTaskActivity` object.
      **/
 
+
     public static OrderedTask stroopTaskFactory(
             Context context,
             String identifier,
@@ -83,7 +85,10 @@ public class StroopTaskFactory {
 
                 String title = context.getString(R.string.rsb_STROOP_TASK_TITLE);
                 InstructionStep instructionStep2 = new InstructionStep(Instruction2StepIdentifier, title, intendedUseDescription);
-                instructionStep2.setMoreDetailText(context.getString(R.string.rsb_STROOP_TASK_INTRO2_DETAIL_TEXT));
+                instructionStep2.setMoreDetailText(String.format(
+                        context.getString(R.string.rsb_STROOP_TASK_INTRO2_DETAIL_TEXT),
+                        String.valueOf(numberOfAttempts),
+                        significantFigures(timeout)));
                 instructionStep2.setImage(ResUtils.Stroop.PHONE_STROOP_BUTTON);
                 stepList.add(instructionStep2);
 
@@ -123,6 +128,14 @@ public class StroopTaskFactory {
             stepList.add(TaskFactory.makeCompletionStep(context));
         }
         return new OrderedTask(identifier, stepList);
+    }
+
+    private static String significantFigures(double number) {
+        String string = String.valueOf(number);
+        if (string.contains(".")) {
+            string = string.replaceAll("0*$","").replaceAll("\\.$","");
+        }
+        return string;
     }
 }
 

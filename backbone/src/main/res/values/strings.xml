@@ -587,7 +587,7 @@
     <!-- Stroop active task -->
     <string name="rsb_STROOP_TASK_TITLE">Stroop</string>
     <string name="rsb_STROOP_TASK_INTRO1_DETAIL_TEXT">Every time a word appears, select the first letter of the name of the COLOR that is shown.</string>
-    <string name="rsb_STROOP_TASK_INTRO2_DETAIL_TEXT">Tap the button when you are ready to begin.</string>
+    <string name="rsb_STROOP_TASK_INTRO2_DETAIL_TEXT">You will be presented with %1$s words. Make your selections as accurate and as fast as you can. You will have a time limit of %2$s seconds to judge the color of each word.\n\nTap the button when you are ready to begin.</string>
     <string name="rsb_STROOP_TASK_STEP_TEXT">Select the first letter of the name of the COLOR that is shown.</string>
     <string name="rsb_STROOP_COLOR_RED">RED</string>
     <string name="rsb_STROOP_COLOR_GREEN">GREEN</string>

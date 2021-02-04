@@ -1,6 +1,5 @@
 package org.researchstack.backbone.task.factory;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 
 import org.researchstack.backbone.R;
@@ -13,11 +12,8 @@ import org.researchstack.backbone.utils.ResUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.Random;
 
 import static org.researchstack.backbone.task.factory.TaskFactory.Constants.*;
-import static org.researchstack.backbone.task.factory.TaskOptions.ImageOption.*;
 
 /**
  * Created by Dr David W. Evans, 2021.
@@ -52,7 +48,7 @@ public class StroopTaskFactory {
      *                                      begins, until the attempt fails, if a button is not pressed.
      * @param numberOfAttempts              Total number of stroop questions to include in the task.
      * @param optionList                    Options that affect the features of the predefined task.
-     * @return                              An active left/right judgement task that can be presented
+     * @return                              An active stroop task that can be presented
      *                                      with an `ActiveTaskActivity` object.
      **/
 

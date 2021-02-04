@@ -31,6 +31,11 @@ public class ResUtils {
         public static final String ANIMATED_TAPPING_LEFT        = "rsb_animated_tapping_left";
     }
 
+    public static class Stroop {
+        public static final String PHONE_STROOP_LABEL       = "rsb_phone_stroop_label";
+        public static final String PHONE_STROOP_BUTTON      = "rsb_phone_stroop_button";
+    }
+
     public static class TimedWalking {
         public static final String TURNAROUND     = "rsb_timed_walking_turnaround";
         public static final String MAN_RETURN     = "rsb_timed_walking_man_return";

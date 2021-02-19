@@ -1,11 +1,10 @@
 package org.researchstack.backbone.step.active;
 
-import org.researchstack.backbone.step.active.ActiveStep;
 import org.researchstack.backbone.task.factory.TaskOptions;
 import org.researchstack.backbone.ui.step.layout.LeftRightJudgementStepLayout;
 
 /**
- * Created by Dr David W. Evans, January 2021.
+ * Created by Dr David W. Evans in January 2021.
  */
 
 public class LeftRightJudgementStep extends ActiveStep {

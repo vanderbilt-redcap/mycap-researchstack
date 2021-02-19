@@ -141,7 +141,7 @@ public class LeftRightJudgementStepLayout extends ActiveStepLayout {
         if (!(leftRightJudgementStep.getImageOption().equals(HANDS)) &&
                 !(leftRightJudgementStep.getImageOption().equals(FEET)) &&
                 !(leftRightJudgementStep.getImageOption().equals(BOTH))) {
-            throw new IllegalStateException("LEFT_RIGHT_JUDGEMENT_IMAGE_OPTION_ERROR");
+            throw new IllegalStateException(getContext().getString(R.string.rsb_LEFT_RIGHT_JUDGEMENT_IMAGE_OPTION_ERROR));
         }
         if (leftRightJudgementStep.getNumberOfAttempts() > arrayOfShuffledFileNamesFromDirectory().length)  {
             throw new IllegalStateException("Number of requested attempts is beyond the number of available images");

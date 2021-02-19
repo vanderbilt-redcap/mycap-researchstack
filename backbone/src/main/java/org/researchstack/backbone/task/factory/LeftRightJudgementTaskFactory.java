@@ -12,14 +12,13 @@ import org.researchstack.backbone.utils.ResUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 import static org.researchstack.backbone.task.factory.TaskFactory.Constants.*;
 import static org.researchstack.backbone.task.factory.TaskOptions.ImageOption.*;
 
 /**
- * Created by Dr David W. Evans, Janury 2021.
+ * Created by Dr David W. Evans, 2021.
  */
 
 public class LeftRightJudgementTaskFactory {

@@ -89,6 +89,7 @@ dependencies {
         // this can cause dex errors due to duplicate joda times
     }
     implementation 'net.danlew:android.joda:2.10.1.2'
+    implementation 'com.google.guava:guava:30.1-jre'
     // android specific joda time, jre version causes perf problems
     testImplementation 'joda-time:joda-time:2.10.1'
 

@@ -584,6 +584,32 @@
     <string name="rsb_REACTION_TIME_TASK_CALL_TO_ACTION">Tap Get Started to begin.</string>
     <string name="rsb_REACTION_TIME_TASK_ATTEMPTS_FORMAT">Attempt %1$s of %2$s</string>
     <string name="rsb_REACTION_TIME_TASK_ACTIVE_STEP_TITLE">Quickly shake the device when the blue circle appears</string>
+    <!-- Left/Right Judgement active task. -->
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_IMAGE_OPTION_ERROR">Image sets must be hands or feet</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_TITLE">Left or Right?</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_TITLE_HAND">Left or Right Hands?</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_TITLE_FOOT">Left or Right Feet?</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_HAND">Every time an image of a hand appears, select the side of the body to which it belongs (left or right). Use your thumbs to tap the buttons when making your selection.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_FOOT">Every time an image of a foot appears, select the side of the body to which it belongs (left or right). Use your thumbs to tap the buttons when making your selection.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_HAND_FIRST">Every time an image appears, select the side of the body to which it belongs (left or right). Use your thumbs to tap the buttons when making your selection. Images of hands will be presented first.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_FOOT_FIRST">Every time an image appears, select the side of the body to which it belongs (left or right). Use your thumbs to tap the buttons when making your selection. Images of feet will be presented first.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_HAND_SECOND">Now repeat the same test with images of hands.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO1_DETAIL_TEXT_FOOT_SECOND">Now repeat the same test with images of feet.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO2_DETAIL_TEXT_HAND">You will be presented with %1$s images of hands. Make your selections as accurate and as fast as you can. You will have a time limit of %2$s seconds to judge each image.\n\nTap the button when you are ready to begin.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_INTRO2_DETAIL_TEXT_FOOT">You will be presented with %1$s images of feet. Make your selections as accurate and as fast as you can. You will have a time limit of %2$s seconds to judge each image.\n\nTap the button when you are ready to begin.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_IMAGE_COUNT">%1$s of %2$s</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_STEP_TEXT_HAND">Select the side of the body to which each hand belongs.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TASK_STEP_TEXT_FOOT">Select the side of the body to which each foot belongs.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_LEFT_BUTTON">Left</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_RIGHT_BUTTON">Right</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_BUTTON_NONE">None</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_CORRECT">You are correct!</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_INCORRECT">Sorry, you are incorrect.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_TIMEOUT_NOTIFICATION">Sorry, this image timed out.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_RIGHT_HAND">The image showed a right hand.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_LEFT_HAND">The image showed a left hand.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_RIGHT_FOOT">The image showed a right foot.</string>
+    <string name="rsb_LEFT_RIGHT_JUDGEMENT_ANSWER_LEFT_FOOT">The image showed a left foot.</string>
     <!-- Tower of"rsb_Hanoi active task -->
     <string name="rsb_TOWER_OF_HANOI_TASK_TITLE">Tower of Hanoi</string>
     <string name="rsb_TOWER_OF_HANOI_TASK_INTENDED_USE">This activity evaluates your puzzle solving skills.</string>
@@ -599,17 +625,17 @@
     <string name="rsb_knee_range_of_motion_text_instruction_0">This activity measures how far you can extend your %1$s knee.</string>
     <string name="rsb_knee_range_of_motion_text_instruction_1">Sit down on the edge of a chair. When you begin you will put your device on your %1$s knee for a measurement. Please turn the sound on your device on so you can hear instructions.</string>
     <string name="rsb_knee_range_of_motion_text_instruction_2">Place your device on your %1$s knee with the screen facing out, as pictured.</string>
-    <string name="rsb_knee_range_of_motion_text_instruction_3">When ready, tap the screen to begin and extend your %1$s knee as far as you can. Tap again when you are done.</string>
-    <string name="rsb_knee_range_of_motion_touch_anywhere_step_instruction">Place your device on your %1$s knee</string>
-    <string name="rsb_knee_range_of_motion_spoken_instruction">Extend your %1$s knee. Then tap anywhere.</string>
+    <string name="rsb_knee_range_of_motion_text_instruction_3">When ready, tap the screen to begin and extend your %1$s knee as far as you can. Return to the start position and tap again when you are done.</string>
+    <string name="rsb_knee_range_of_motion_touch_anywhere_step_instruction">Place your device on your %1$s knee. Tap the screen and extend your %1$s knee as far as you can.</string>
+    <string name="rsb_knee_range_of_motion_spoken_instruction">When you are done, return your %1$s knee to the start position. Then tap anywhere.</string>
     <!-- Shoulder"rsb_Range of Motion active task -->
     <string name="rsb_shoulder_range_of_motion_title">%1$s Shoulder Range of Motion</string>
     <string name="rsb_shoulder_range_of_motion_text_instruction_0">This activity measures how far you can extend your %1$s shoulder.</string>
     <string name="rsb_shoulder_range_of_motion_text_instruction_1">When you begin you will put your device on your %1$s shoulder for a measurement. Please turn the sound on your device on so you can hear instructions.</string>
     <string name="rsb_shoulder_range_of_motion_text_instruction_2">Place your device on your %1$s shoulder with the screen facing out, as pictured.</string>
-    <string name="rsb_shoulder_range_of_motion_text_instruction_3">When ready, tap the screen to begin and raise your %1$s arm as far as you can. Tap again when you are done.</string>
-    <string name="rsb_shoulder_range_of_motion_touch_anywhere_step_instruction">Place your device on your %1$s shoulder</string>
-    <string name="rsb_shoulder_range_of_motion_spoken_instruction">Lift your %1$s arm up. Then tap anywhere.</string>
+    <string name="rsb_shoulder_range_of_motion_text_instruction_3">When ready, tap the screen to begin and raise your %1$s arm as far as you can. Return to the start position and tap again when you are done.</string>
+    <string name="rsb_shoulder_range_of_motion_touch_anywhere_step_instruction">Place your device on your %1$s shoulder. Tap the screen and raise your %1$s arm to the front as far as you can.</string>
+    <string name="rsb_shoulder_range_of_motion_spoken_instruction">When you are done, return your %1$s arm to the start position. Then tap anywhere.</string>
     <!-- Timed wa"rsb_k active task. -->
     <string name="rsb_TIMED_WALK_TITLE">Timed Walk</string>
     <string name="rsb_TIMED_WALK_INTRO_DETAIL">This activity measures your lower extremity function.</string>

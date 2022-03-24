@@ -17,12 +17,17 @@
         <item name="pieChartCardStyle">@style/Widget.Backbone.Chart.Pie</item>
         <item name="lineChartCardStyle">@style/Widget.Backbone.Chart.Line</item>
         <item name="barChartCardStyle">@style/Widget.Backbone.Chart.Bar</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerTheme.ButtonBarNegativeButtonStyle</item>
     </style>
 
     <style name="Theme.Backbone" parent="Base.Theme.Backbone" />
 
     <style name="Theme.Backbone.Toolbar">
         <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@android:color/holo_red_light</item>
     </style>
 
 

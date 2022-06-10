@@ -46,11 +46,15 @@ open class ContinuousScaleQuestionBody(step: Step, result: StepResult<*>?) : Ste
         formItemView.rsbRangeStart.text = format.minValue.toString()
 
         formItemView.rsbRangeEnd.text = format.maxValue.toString()
+        val mins = format.minValue.toInt();
+        val maxs = format.maxValue.toInt();
 
-        formItemView.seekBar.max = if (format.minValue <= 0) {
-            format.maxValue + format.minValue
-        } else {
-            format.maxValue - format.minValue
+//        New slider code to handle negative values
+        if(maxs >= 0 && mins >= 0){
+            formItemView.seekBar.max = maxs - mins
+        }
+        if(mins <= 0){
+            formItemView.seekBar.max = maxs + (mins * -1)
         }
 
         if (format.maxDescription == null) {

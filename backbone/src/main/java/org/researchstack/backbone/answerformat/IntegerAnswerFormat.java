@@ -61,6 +61,15 @@ public class IntegerAnswerFormat extends TextAnswerFormat {
     }
 
     /**
+     * Returns the maximum allowed value for the slider type
+     *
+     * @return the slider max value
+     */
+    public int getMaxValueForSlider() {
+        return maxValue;
+    }
+
+    /**
      * Returns the minimum allowed value for the question
      *
      * @return returns the minimum allowed value for the question

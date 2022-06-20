@@ -46,7 +46,17 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
 
         formItemView.rsbRangeStart.text = format.minValue.toString()
 
-        formItemView.rsbRangeEnd.text = format.maxValue.toString()
+        formItemView.rsbRangeEnd.text = format.maxValueForSlider.toString()
+
+        val mins = format.minValue.toInt();
+        val maxs = format.maxValueForSlider.toInt();
+
+        formItemView.seekBar.max = if (maxs <= 0) {
+            abs(mins) - abs(maxs)
+        } else {
+            maxs - mins
+        }
+        seekBarMax = if(maxs >= 10) 10 else (maxs - mins)
 
         if (format.maxDescription == null) {
             formItemView.maxDescription.visibility = View.GONE
@@ -61,13 +71,13 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
             formItemView.minDescription.visibility = View.VISIBLE
             formItemView.minDescription.text = format.minDescription
         }
-        if (format.maxValue >= 10) {
-            formItemView.seekBar.max = 10
-            seekBarMax = 10
-        } else {
-            formItemView.seekBar.max = format.maxValue - format.minValue
-            seekBarMax = format.maxValue - format.minValue
-        }
+        // if (format.maxValue >= 10) {
+        //     formItemView.seekBar.max = 10
+        //     seekBarMax = 10
+        // } else {
+        //     formItemView.seekBar.max = format.maxValue - format.minValue
+        //     seekBarMax = format.maxValue - format.minValue
+        // }
 
         formItemView.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
@@ -90,7 +100,7 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
 
         if (result.result != null) {
             formItemView.seekBar.progress =
-                calculateProgress(result.result, format.minValue, format.maxValue, format.step)
+                calculateProgress(result.result, format.minValue, format.maxValueForSlider, format.step)
             currentNumberTextView.text = result.result.toString()
         }
 
@@ -99,7 +109,7 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
 
     private fun calculateDisplayValue(progress: Int): Int {
         val value =
-            Math.round(progress * (format.maxValue - format.minValue).toDouble() / seekBarMax)
+            Math.round(progress * (format.maxValueForSlider - format.minValue).toDouble() / seekBarMax)
         return (value.toInt() + format.minValue) / format.step * format.step
     }
 

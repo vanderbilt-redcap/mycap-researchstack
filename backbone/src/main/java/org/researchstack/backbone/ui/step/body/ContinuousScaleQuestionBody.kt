@@ -12,6 +12,7 @@ import org.researchstack.backbone.result.StepResult
 import org.researchstack.backbone.step.QuestionStep
 import org.researchstack.backbone.step.Step
 import org.researchstack.backbone.utils.TextUtils
+import java.lang.Math.abs
 
 open class ContinuousScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
     protected var step: QuestionStep = step as QuestionStep
@@ -42,19 +43,16 @@ open class ContinuousScaleQuestionBody(step: Step, result: StepResult<*>?) : Ste
         val formItemView = inflater.inflate(R.layout.rsb_continuous_scale_question_layout, parent, false)
 
         currentNumberTextView = formItemView.findViewById(R.id.value)
+        formItemView.rsbRangeStart.text = format.minValue.toString();
+        formItemView.rsbRangeEnd.text = format.maxValueForSlider.toString();
 
-        formItemView.rsbRangeStart.text = format.minValue.toString()
-
-        formItemView.rsbRangeEnd.text = format.maxValue.toString()
         val mins = format.minValue.toInt();
-        val maxs = format.maxValue.toInt();
+        val maxs = format.maxValueForSlider.toInt();
 
-//        New slider code to handle negative values
-        if(maxs >= 0 && mins >= 0){
-            formItemView.seekBar.max = maxs - mins
-        }
-        if(mins <= 0){
-            formItemView.seekBar.max = maxs + (mins * -1)
+        formItemView.seekBar.max = if (maxs <= 0) {
+            abs(mins) - abs(maxs)
+        } else {
+            maxs - mins
         }
 
         if (format.maxDescription == null) {

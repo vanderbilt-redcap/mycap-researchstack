@@ -12,6 +12,7 @@ import org.researchstack.backbone.result.StepResult
 import org.researchstack.backbone.step.QuestionStep
 import org.researchstack.backbone.step.Step
 import org.researchstack.backbone.utils.TextUtils
+import java.lang.Math.abs
 
 open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
     protected var step: QuestionStep = step as QuestionStep

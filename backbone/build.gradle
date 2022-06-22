@@ -109,7 +109,7 @@ dependencies {
     implementation 'com.scottyab:aes-crypto:0.0.5'
     implementation 'co.touchlab.squeaky:squeaky-query:0.4.0.0'
     kapt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
-    implementation 'net.zetetic:android-database-sqlcipher:3.5.4@aar'
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
 
     // Libraries to help with unit testing
     testImplementation 'junit:junit:4.12'

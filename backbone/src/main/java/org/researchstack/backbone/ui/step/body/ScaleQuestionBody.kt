@@ -53,11 +53,12 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
         val maxs = format.maxValueForSlider.toInt();
 
         formItemView.seekBar.max = if (maxs <= 0) {
-            abs(mins) - abs(maxs)
+            (abs(mins) - abs(maxs)) / format.step
         } else {
-            maxs - mins
+            (maxs - mins) / format.step
         }
-        seekBarMax = if(maxs >= 10) 10 else (maxs - mins)
+        // seekBarMax = if(maxs >= 10) 10 else (maxs - mins)
+        seekBarMax = formItemView.seekBar.max;
 
         if (format.maxDescription == null) {
             formItemView.maxDescription.visibility = View.GONE
@@ -109,9 +110,10 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
     }
 
     private fun calculateDisplayValue(progress: Int): Int {
-        val value =
-            Math.round(progress * (format.maxValueForSlider - format.minValue).toDouble() / seekBarMax)
-        return (value.toInt() + format.minValue) / format.step * format.step
+        val value = Math.round(progress * (format.maxValueForSlider - format.minValue).toDouble() / seekBarMax)
+        var result = (value.toInt() + format.minValue)
+        return result
+//        return (value.toInt() + format.minValue) / format.step * format.step
     }
 
     private fun calculateProgress(value: Int, MIN: Int, MAX: Int, STEP: Int): Int {

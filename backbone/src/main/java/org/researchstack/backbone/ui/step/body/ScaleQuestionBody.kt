@@ -113,6 +113,7 @@ open class ScaleQuestionBody(step: Step, result: StepResult<*>?) : StepBody {
         val value = Math.round(progress * (format.maxValueForSlider - format.minValue).toDouble() / seekBarMax)
         var result = (value.toInt() + format.minValue)
         return result
+        //test
     }
 
     private fun calculateProgress(value: Int, MIN: Int, MAX: Int, STEP: Int): Int {

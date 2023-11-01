@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.github.dcendents.android-maven'
+// apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 apply plugin: "kotlin-kapt"
@@ -11,11 +12,11 @@ apply plugin: "kotlin-kapt"
 version = '2.0.0-SNAPSHOT'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 26
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 7
         versionName version
         vectorDrawables.useSupportLibrary = true
@@ -43,7 +44,8 @@ android {
     }
 
     resourcePrefix 'rsb_'
-    buildToolsVersion = '29.0.2'
+    // buildToolsVersion = '29.0.2'
+    buildToolsVersion = '33.0.0'
 }
 
 // Reading in data from local.properties is used here to grab key/value pairs used below in ext
@@ -73,10 +75,12 @@ dependencies {
     implementation 'nl.littlerobots.rxlint:rxlint:1.7.3'
 
     // These are all support libraries that should be updated when Google releases new ones
-    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"//original
+//    implementation "androidx.appcompat:appcompat:1.6.1"
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
-    implementation 'androidx.annotation:annotation:1.1.0'
+    //implementation 'androidx.annotation:annotation:1.1.0'//original
+    implementation "androidx.annotation:annotation:${versions.annotation}"
     implementation 'com.google.android.material:material:1.0.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}"
@@ -89,8 +93,12 @@ dependencies {
         // this can cause dex errors due to duplicate joda times
     }
     implementation 'net.danlew:android.joda:2.10.1.2'
+    implementation files('lib/sorcerer-javac-0.8.jar')
+    implementation files('lib/dircontextsource-1.0.jar')
+    implementation files('lib/rapidpm-dependencies-core-reflection-04.00.07-RPM.jar')
+    implementation files('lib/javapoet-1.7.0.jar')
     // android specific joda time, jre version causes perf problems
-    testImplementation 'joda-time:joda-time:2.10.1'
+    // testImplementation 'joda-time:joda-time:2.10.1'
 
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
@@ -104,22 +112,24 @@ dependencies {
     }
 
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
-    implementation "androidx.constraintlayout:constraintlayout-solver:${versions.constraintLayout}"
+    implementation "androidx.constraintlayout:constraintlayout-solver:${versions.cayoutSolver}"
 
     implementation 'com.scottyab:aes-crypto:0.0.5'
-    implementation 'co.touchlab.squeaky:squeaky-query:0.4.0.0'
-    kapt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
+    // implementation 'co.touchlab.squeaky:squeaky-query:0.4.0.0'
+    // implementation 'com.github.kpgalligan:Squeaky:0.3.1.0'
+    // kapt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
+    // kapt 'com.github.kpgalligan:Squeaky:processor:0.3.1.0'
     implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
 
     // Libraries to help with unit testing
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.24.0'
-    testImplementation 'org.powermock:powermock-api-mockito2:1.7.1'
-    testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.7.1'
-    testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.1'
-    testImplementation 'org.powermock:powermock-module-junit4:1.7.1'
+    // testImplementation 'junit:junit:4.12'
+    // testImplementation 'org.mockito:mockito-core:2.24.0'
+    // testImplementation 'org.powermock:powermock-api-mockito2:1.7.1'
+    // testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.7.1'
+    // testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.1'
+    // testImplementation 'org.powermock:powermock-module-junit4:1.7.1'
 
-    testImplementation 'org.robolectric:robolectric:4.2.1'
+    // testImplementation 'org.robolectric:robolectric:4.2.1'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     // Required for camera support face detection
@@ -127,6 +137,7 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:1.0.1"
     implementation "androidx.camera:camera-view:1.0.0-alpha27"
     implementation 'com.google.mlkit:face-detection:16.1.2'
+
 }
 
 

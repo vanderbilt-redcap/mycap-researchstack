@@ -25,6 +25,7 @@ import org.researchstack.backbone.ui.step.layout.ActiveStepLayout
 import org.researchstack.backbone.ui.step.layout.StepLayout
 import org.researchstack.backbone.ui.step.layout.StepPermissionRequest
 import org.researchstack.backbone.utils.LogExt
+import androidx.core.app.ActivityCompat
 import java.util.*
 
 /**
@@ -199,12 +200,13 @@ open class ActiveTaskActivity : ViewTaskActivity(), ActivityCallback, ActiveTask
         super.onExecuteStepAction(action)
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
+//    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(33)
     override fun onRequestPermission(id: String) {
         if (PermissionRequestManager.getInstance().isNonSystemPermission(id)) {
             PermissionRequestManager.getInstance().onRequestNonSystemPermission(this, id)
         } else {
-            requestPermissions(arrayOf(id), PermissionRequestManager.PERMISSION_REQUEST_CODE)
+            ActivityCompat.requestPermissions(this, arrayOf(id), PermissionRequestManager.PERMISSION_REQUEST_CODE)
         }
     }
 

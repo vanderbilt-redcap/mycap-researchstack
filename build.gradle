@@ -43,10 +43,24 @@ allprojects {
     repositories {
         jcenter()
         google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            url 'https://repo.maven.apache.org/maven2'
+        }
         // TODO: This URL returns 403
 //        maven {
 //            url "https://dl.bintray.com/touchlab/Squeaky"
 //        }
+        // maven {
+        //     url "https://mvnrepository.com/artifact/co.touchlab.squeaky/squeaky-query"
+        // }
+        // maven { url "https://repo.spring.io/plugins-release/" }
+        maven {
+            // url "https://repo.spring.io/plugins-release/"
+            // url "https://repo.spring.io/plugins-snapshot/",
+            // url "https://repo.spring.io/plugins-milestone/",
+        }
         maven { url "https://www.jitpack.io" }
     }
 }

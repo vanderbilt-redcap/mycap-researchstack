@@ -151,8 +151,12 @@ public class DateQuestionBody implements StepBody {
 
     private void showDialog(TextView tv) {
         // need to find a material date picker, since it's not in the support library
-        ContextThemeWrapper contextWrapper = new ContextThemeWrapper(tv.getContext(),
-                R.style.Platform_AppCompat_Light);
+        ContextThemeWrapper contextWrapper = new ContextThemeWrapper(
+            tv.getContext(),
+            R.style.AlertDialog_AppCompat
+            //R.style.Platform_AppCompat_Light
+        );
+
         if (format.getStyle() == AnswerFormat.DateAnswerStyle.Date) {
             new DatePickerDialog(contextWrapper,
                     (view, year, monthOfYear, dayOfMonth) -> {

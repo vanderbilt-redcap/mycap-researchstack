@@ -120,6 +120,8 @@ public class RecorderService extends Service implements RecorderListener, TextTo
     protected boolean isServiceRunning;
     protected boolean shouldCancelRecordersOnDestroy;
 
+    static Intent customIntent;
+
     /**
      * @param appContext
      * @return the saved result list, if this active step has already completed recording
@@ -215,6 +217,14 @@ public class RecorderService extends Service implements RecorderListener, TextTo
         extras.putSerializable(INTENT_KEY_OUTPUT_DIRECTORY, outputDirectory);
 
         intent.putExtras(extras);
+
+//        intent.putExtra(EXTRA_STEP,activeStep);
+//        intent.putExtra(ViewTaskActivity.EXTRA_TASK,task);
+//        intent.putExtra(ViewTaskActivity.EXTRA_TASK_RESULT,taskResult);
+//        intent.putExtra(INTENT_KEY_OUTPUT_DIRECTORY,outputDirectory);
+
+        customIntent = intent;
+
         appContext.startService(intent);
     }
 
@@ -222,7 +232,7 @@ public class RecorderService extends Service implements RecorderListener, TextTo
     public void onCreate() {
         super.onCreate();
         LogExt.d(RecorderService.class, "onCreate");
-        
+
         // no-op, wait for onStartCommand
     }
 
@@ -260,20 +270,26 @@ public class RecorderService extends Service implements RecorderListener, TextTo
 
         File outputDir = null;
         if (intent != null && intent.getExtras() != null) {
-            Bundle bundle = intent.getExtras();
-            if (bundle.containsKey(EXTRA_STEP)) {
+//            Bundle bundle = intent.getExtras();
+            Bundle bundle = customIntent.getExtras();
+//            if (bundle.containsKey(EXTRA_STEP)) {
+            if (bundle.get(EXTRA_STEP) != null) {
+//
                 activeStep = (ActiveStep)bundle.getSerializable(EXTRA_STEP);
             }
-            if (bundle.containsKey(EXTRA_TASK)) {
+//            if (bundle.containsKey(EXTRA_TASK)) {
+            if (bundle.get(EXTRA_TASK) != null) {
                 task = (Task)bundle.getSerializable(EXTRA_TASK);
             }
-            if (bundle.containsKey(EXTRA_TASK_RESULT)) {
+//            if (bundle.containsKey(EXTRA_TASK_RESULT)) {
+            if (bundle.get(EXTRA_TASK_RESULT) != null) {
                 taskResult = (TaskResult)bundle.getSerializable(EXTRA_TASK_RESULT);
                 if (taskResult == null && task != null) {  // it may be that there is no results yet
                     taskResult = new TaskResult(task.getIdentifier());
                 }
             }
-            if (bundle.containsKey(INTENT_KEY_OUTPUT_DIRECTORY)) {
+//            if (bundle.containsKey(INTENT_KEY_OUTPUT_DIRECTORY)) {
+            if (bundle.get(INTENT_KEY_OUTPUT_DIRECTORY) != null) {
                 outputDir = (File)bundle.getSerializable(INTENT_KEY_OUTPUT_DIRECTORY);
             }
         }
@@ -462,8 +478,18 @@ public class RecorderService extends Service implements RecorderListener, TextTo
 
         notificationIntent.setAction(INTENT_ACTION_RECORDER_RESUME);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//         PendingIntent pendingIntent = PendingIntent.getActivity(
+//                 this, 0, notificationIntent, 0);
+        // PendingIntent pendingIntent = PendingIntent.getActivity(
+        //         this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
+        // PendingIntent pendingIntent = PendingIntent.getActivity(
+        //         this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pendingIntent = PendingIntent.getActivity(
-                this, 0, notificationIntent, 0);
+                this,
+                0,
+                notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
 
         String msg = getString(R.string.rsb_recording);
 

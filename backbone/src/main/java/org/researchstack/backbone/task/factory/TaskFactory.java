@@ -35,8 +35,8 @@ public class TaskFactory {
         public static final String Instruction6StepIdentifier = "instruction6";
         public static final String Instruction7StepIdentifier = "instruction7";
 
-        // Countdown identifiers
-        public static final String CountdownStepIdentifier = "countdown";
+        // Countdown Identifiers
+        public static final String CountdownStepIdentifier  = "countdown";
         public static final String Countdown1StepIdentifier = "countdown1";
         public static final String Countdown2StepIdentifier = "countdown2";
         public static final String Countdown3StepIdentifier = "countdown3";
@@ -46,10 +46,26 @@ public class TaskFactory {
         // Tapping Identifiers
         public static final String TappingStepIdentifier = "tapping";
 
+        //Touch Anywhere Identifier
+        public static final String TouchAnywhereStepIdentifier = "touchAnywhere";
+
+        //Range of Motion Identifiers
+        public static final String RangeOfMotionStepIdentifier = "rangeOfMotion";
+        public static final String ActiveTaskLeftLimbIdentifier = "left";
+        public static final String ActiveTaskRightLimbIdentifier = "right";
+
+        //Stroop Identifier
+        public static final String StroopStepIdentifier = "stroop";
+
+        //Left/Right Judgement Identifiers
+        public static final String LeftRightJudgementStepIdentifier = "leftRightJudgement";
+        public static final String ActiveTaskHandImagesIdentifier = "handImages";
+        public static final String ActiveTaskFootImagesIdentifier = "footImages";
+
         // Conclusion Step Identifiers
         public static final String ConclusionStepIdentifier = "conclusion";
 
-        // Active Task Steps Hand Identifier
+        // Active Task Steps Hand Identifiers
         public static final String ActiveTaskMostAffectedHandIdentifier = "mostAffected";
         public static final String ActiveTaskLeftHandIdentifier         = "left";
         public static final String ActiveTaskRightHandIdentifier        = "right";
@@ -69,6 +85,7 @@ public class TaskFactory {
      * @param durationInSeconds the duration in seconds
      * @return a string formatted to "in X minutes, Y seconds" where x & y are from durationInSeconds
      */
+
     public static String convertDurationToString(Context context, int durationInSeconds) {
         int minutes = durationInSeconds / 60;
         int seconds = durationInSeconds - minutes * 60;

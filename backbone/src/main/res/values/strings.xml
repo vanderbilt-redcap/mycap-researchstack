@@ -584,6 +584,21 @@
     <string name="rsb_REACTION_TIME_TASK_CALL_TO_ACTION">Tap Get Started to begin.</string>
     <string name="rsb_REACTION_TIME_TASK_ATTEMPTS_FORMAT">Attempt %1$s of %2$s</string>
     <string name="rsb_REACTION_TIME_TASK_ACTIVE_STEP_TITLE">Quickly shake the device when the blue circle appears</string>
+    <!-- Stroop active task -->
+    <string name="rsb_STROOP_TASK_TITLE">Stroop</string>
+    <string name="rsb_STROOP_TASK_INTRO1_DETAIL_TEXT">Every time a word appears, select the first letter of the name of the COLOR that is shown.</string>
+    <string name="rsb_STROOP_TASK_INTRO2_DETAIL_TEXT">You will be presented with %1$s words. Make your selections as accurate and as fast as you can. You will have a time limit of %2$s seconds to judge the color of each word.\n\nTap the button when you are ready to begin.</string>
+    <string name="rsb_STROOP_TASK_STEP_TEXT">Select the first letter of the name of the COLOR that is shown.</string>
+    <string name="rsb_STROOP_COLOR_RED">RED</string>
+    <string name="rsb_STROOP_COLOR_GREEN">GREEN</string>
+    <string name="rsb_STROOP_COLOR_BLUE">BLUE</string>
+    <string name="rsb_STROOP_COLOR_YELLOW">YELLOW</string>
+    <string name="rsb_STROOP_COLOR_NONE">NONE</string>
+    <string name="rsb_STROOP_COLOR_RED_INITIAL">R</string>
+    <string name="rsb_STROOP_COLOR_GREEN_INITIAL">G</string>
+    <string name="rsb_STROOP_COLOR_BLUE_INITIAL">B</string>
+    <string name="rsb_STROOP_COLOR_YELLOW_INITIAL">Y</string>
+    <string name="rsb_STROOP_TIMEOUT_NOTIFICATION">Sorry, this attempt timed out.</string>
     <!-- Tower of"rsb_Hanoi active task -->
     <string name="rsb_TOWER_OF_HANOI_TASK_TITLE">Tower of Hanoi</string>
     <string name="rsb_TOWER_OF_HANOI_TASK_INTENDED_USE">This activity evaluates your puzzle solving skills.</string>
